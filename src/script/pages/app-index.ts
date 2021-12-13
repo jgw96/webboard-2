@@ -11,11 +11,6 @@ import '../components/header';
 export class AppIndex extends LitElement {
   static get styles() {
     return css`
-      main {
-        padding-left: 16px;
-        padding-right: 16px;
-        padding-bottom: 16px;
-      }
       #routerOutlet > * {
         width: 100% !important;
       }
@@ -67,6 +62,13 @@ export class AppIndex extends LitElement {
         animate: true,
         children: [
           { path: '/', component: 'app-home' },
+          {
+            path: '/drawing',
+            component: 'app-drawing',
+            action: async () => {
+              await import('./app-drawing.js');
+            },
+          },
           {
             path: '/about',
             component: 'app-about',

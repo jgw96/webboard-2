@@ -36,7 +36,7 @@ export class AppHeader extends LitElement {
         width: 11em;
       }
 
-      @media(prefers-color-scheme: light) {
+      @media (prefers-color-scheme: light) {
         header {
           color: black;
         }
@@ -62,9 +62,11 @@ export class AppHeader extends LitElement {
     return html`
       <header>
         <div id="back-button-block">
-          ${this.enableBack ? html`<fluent-anchor appearance="accent" href="/">
-            Back
-          </fluent-anchor>` : null}
+          ${this.enableBack
+            ? html`<fluent-anchor appearance="accent" href="/">
+                Back
+              </fluent-anchor>`
+            : null}
 
           <h1>${this.title}</h1>
         </div>
